@@ -57,7 +57,7 @@ router.post("/new/superadmin", async (req, res) => {
     } catch (error) {
         console.error("Error while creating new admin:", error.message);
         res.status(500).json({
-            message: "Internal Server Error"
+            message: "Internal Server Error" + error.message
         });
     }
 });
