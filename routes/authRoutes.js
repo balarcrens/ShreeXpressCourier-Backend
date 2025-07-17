@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { login, newAdminController, newClientController, getAllAdminController, getAllClientController } = require('../controllers/authController');
 const { protect, superadmin, admin } = require('../middleware/authMiddleware');
-const { body, validationResult } = require("express-validator")
+const { body, validationResult } = require("express-validator");
+const pool = require('../DB/connectdb');
 
 router.post('/login', login);
 
