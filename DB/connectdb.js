@@ -13,13 +13,4 @@ const pool = new Pool({
   }
 });
 
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('❌ Connection error', err.stack);
-  }
-  console.log('✅ Connected to database');
-  release();
-});
-
-
 module.exports = pool;
